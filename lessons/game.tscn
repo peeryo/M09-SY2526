@@ -11,6 +11,8 @@ y_sort_enabled = true
 [node name="Runner" parent="." instance=ExtResource("1_yasw7")]
 position = Vector2(366, 569)
 
+[node name="Camera2D" type="Camera2D" parent="Runner"]
+
 [node name="SimpleObstacle" parent="." instance=ExtResource("2_4o7yg")]
 position = Vector2(744, 603)
 
