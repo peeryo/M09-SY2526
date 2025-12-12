@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c62bk8cggi6yq"]
+[gd_scene load_steps=11 format=3 uid="uid://c62bk8cggi6yq"]
 
 [ext_resource type="Script" uid="uid://b3ch6il2xt8bb" path="res://lessons/game.gd" id="1_48faf"]
 [ext_resource type="PackedScene" uid="uid://p75euy1gcr34" path="res://lessons/runner.tscn" id="1_yasw7"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://xl56q8amb611" path="res://assets/finish_line/finish_line.tscn" id="2_sepuf"]
 [ext_resource type="Texture2D" uid="uid://5vl7p0xb7nd8" path="res://assets/circuit_background.png" id="3_gkp25"]
 [ext_resource type="PackedScene" uid="uid://ctfrkukdhiywq" path="res://lessons/circuit.tscn" id="4_sepuf"]
+[ext_resource type="PackedScene" uid="uid://budpgxkjtmw1f" path="res://lessons/bouncer.tscn" id="5_8c4bg"]
 [ext_resource type="Theme" uid="uid://cdcyvsn1fp8wa" path="res://assets/countdown/count_down_theme.tres" id="7_viysf"]
 [ext_resource type="Script" uid="uid://57e8080cpukf" path="res://assets/countdown/count_down.gd" id="8_tpjcj"]
 [ext_resource type="PackedScene" uid="uid://dj6ye05dbiqpi" path="res://lessons/pause_screen.tscn" id="9_tpjcj"]
@@ -14,30 +15,33 @@
 y_sort_enabled = true
 script = ExtResource("1_48faf")
 
-[node name="Runner" parent="." instance=ExtResource("1_yasw7")]
-unique_name_in_owner = true
-position = Vector2(-165, -20)
+[node name="CIrcuitBackground" type="Sprite2D" parent="."]
+z_index = -1
+texture = ExtResource("3_gkp25")
 
 [node name="FinishLine" parent="." instance=ExtResource("2_sepuf")]
 unique_name_in_owner = true
 position = Vector2(-448, 217)
 area_width = 256
 
+[node name="Runner" parent="." instance=ExtResource("1_yasw7")]
+unique_name_in_owner = true
+position = Vector2(356, 173)
+
+[node name="Bouncer" parent="." instance=ExtResource("5_8c4bg")]
+unique_name_in_owner = true
+
 [node name="SimpleObstacle" parent="." instance=ExtResource("2_4o7yg")]
-position = Vector2(744, 603)
+position = Vector2(726, 663)
 
 [node name="SimpleObstacle2" parent="." instance=ExtResource("2_4o7yg")]
-position = Vector2(-467, -36)
+position = Vector2(-439, 24)
 
 [node name="SimpleObstacle3" parent="." instance=ExtResource("2_4o7yg")]
-position = Vector2(1132, 507)
+position = Vector2(1251, 273)
 
 [node name="SimpleObstacle4" parent="." instance=ExtResource("2_4o7yg")]
-position = Vector2(422, -23)
-
-[node name="CIrcuitBackground" type="Sprite2D" parent="."]
-z_index = -1
-texture = ExtResource("3_gkp25")
+position = Vector2(1033, -634)
 
 [node name="Circuit" parent="." instance=ExtResource("4_sepuf")]
 metadata/_edit_lock_ = true
